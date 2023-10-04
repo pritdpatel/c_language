@@ -19,4 +19,14 @@
     variable can store the value which is used multiple times and you can change all instance with single variable change.
      changing variable is not mendatory. 
 
-5.
+5.what is memory allocation?
+Memory allocation is method to alloc address to datatype to store data.it helps to manage memory in efficient manner.
+
+6. list of memory allocation method?
+1.melloc()
+-->pointer =(cast-type)* malloc(byte-size)
+2.calloc() or realloc()
+calloc()--> pointer=(cast-type)* calloc(n,element-size );
+realloc()-->   pointer=realloc(pointer, newSize )
+3.free()
+--> free(pointer)
