@@ -8,7 +8,7 @@
 int main(){
     int Int;
     printf("Enter your number except 5 \n");
-    scanf("%[^5]", Int);
+    scanf("%[^5]", &Int);
 
     printf("Int: %d ", Int);
 

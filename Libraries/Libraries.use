@@ -1,0 +1,18 @@
+1.<assert.h >  header
+assert header used to verify assumptions made by the program and print a diagnostic message if this assumptions is false.
+
+2.< ctype.h> header
+testing and mapping charaters.
+all function accepts int as a parameter. value must be EOF or unsigned char.
+
+3.<errno.h> header
+integer variable errno, which is set by system call and some libraries function
+Lvaule  <-- int
+can be read and modify by the program.
+set to zero at program startup
+
+4.<float.h >  header
+
+
+5.<limits.h>  header
+the limits.h header determines various properties of the various variable types.the macros defines
