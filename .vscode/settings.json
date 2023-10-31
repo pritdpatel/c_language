@@ -4,6 +4,7 @@
         "stdbool.h": "c",
         "assert.h": "c",
         "ctype.h": "c",
-        "locale.h": "c"
+        "locale.h": "c",
+        "tchar.h": "c"
     }
 }
