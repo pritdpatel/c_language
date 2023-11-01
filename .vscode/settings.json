@@ -5,6 +5,9 @@
         "assert.h": "c",
         "ctype.h": "c",
         "locale.h": "c",
-        "tchar.h": "c"
+        "tchar.h": "c",
+        "windows.h": "c",
+        "commdlg.h": "c",
+        "imm.h": "c"
     }
 }

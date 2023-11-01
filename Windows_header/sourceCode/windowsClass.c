@@ -1,21 +1,28 @@
+#define UNICODE
+#define _UNICODE
 #include<windows.h>
 #include<stdio.h>
 #define null 0
+#include "resource.h"
+
+
 LRESULT CALLBACK windowPeocedure(HWND,UINT,WPARAM,LPARAM); 
 
-
 int WINAPI WinMain(HINSTANCE hint,HINSTANCE hprevint,LPSTR argv, int ncmdshow){
-    WNDCLASSW wc={0};
+    
+    //define windows class 
+    WNDCLASS wc={0};
     wc.hbrBackground=(HBRUSH) COLOR_WINDOW;
+    wc.hIcon=LoadIcon(hint,MAKEINTRESOURCE(IDI_ICON));
     wc.hCursor=LoadCursor(NULL,IDC_ARROW);
     wc.hInstance=hint;
-    wc.lpszClassName=L"myWindowsClass";
+    wc.lpszClassName=TEXT("myWindowsClass");
     wc.lpfnWndProc=windowPeocedure;
 
-    // unsigned short name[]=L"this is name";
-    if(!RegisterClassW(&wc))return -1;
-    HWND hwnd =CreateWindowW(L"myWindowsClass",L"main",WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100,100,700,700,NULL,NULL,NULL,NULL);
-    // printf("hwnd: %d",hwnd);
+
+    if(!RegisterClass(&wc))return -1;
+    HWND hwnd =CreateWindow(TEXT("myWindowsClass"),TEXT("main"),WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100,100,700,700,NULL,NULL,NULL,NULL);
+    
 
     MSG msg={0};
     while(GetMessage( &msg, NULL,null,null)){
@@ -26,7 +33,6 @@ int WINAPI WinMain(HINSTANCE hint,HINSTANCE hprevint,LPSTR argv, int ncmdshow){
 }
 
 LRESULT CALLBACK windowPeocedure(HWND hwnd,UINT Msg ,WPARAM wp,LPARAM lp){
-    if(Msg==36)printf("size got changed\n");
     HDC hdc;
     PAINTSTRUCT ps;
     RECT rect;
